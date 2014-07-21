@@ -29,6 +29,7 @@ Captions can be defined by .xlsx file and the results are written to it.
  * Checker text element is defined in main.qml.
 * Run CaptionClipChecker.
 * Open .xlsx file you created(Ctrl+O).
+ * If there are 6 empty rows, stop loading.
 * Execute check(Alt+C).
  * Results are written to the column next to the caption's one.
 * Open .xlsx file by Excel(or alternative application) and check the results.
