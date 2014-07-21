@@ -78,10 +78,16 @@ ApplicationWindow {
             }
         }
         Row{
-            Label { text:qsTr("simple test. input any strings. -->") }
+            Label { text:qsTr("quick check. input any strings. -->") }
             TextArea {
                 onTextChanged: {
                     txt_caption_checker01.text = text
+                    if(txt_caption_checker01.truncated){
+                        ta_log.append("NG:cpation is clipped.")
+                    }
+                    else{
+                        ta_log.append("OK:cpation is not clipped.")
+                    }
                 }
             }
 
