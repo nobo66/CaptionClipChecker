@@ -22,13 +22,13 @@ Captions can be defined by .xlsx file and the results are written to it.
 
 ## How to use
 * Create caption list as .xlsx format.
+ * Refer to the sample/CaptionListSample.xlsx
+ * Caption list should be defined in first(leftmost) sheet.
+ * List start cell can be set by tool's setting. default value is (1,2)(=A2)
 * Modify checker text element's(id=txt_caption_checker01) property as you want.
  * Checker text element is defined in main.qml.
 * Run CaptionClipChecker.
 * Open .xlsx file you created(Ctrl+O).
- * Refer to the sample/CaptionListSample.xlsx
- * Caption list should be defined in first(leftmost) sheet.
- * List start cell can be set by tool's setting. default value is (1,2)(=A2)
 * Execute check(Alt+C).
  * Results are written to the column next to the caption's one.
 * Open .xlsx file by Excel(or alternative application) and check the results.
