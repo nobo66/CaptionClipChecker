@@ -63,7 +63,7 @@ ApplicationWindow {
             }
 
             Text{
-                id:txt01
+                id:txt_caption_checker01
                 text: "sample caption"
                 width: 80
                 height: 50
@@ -81,7 +81,7 @@ ApplicationWindow {
             Label { text:qsTr("simple test. input any strings. -->") }
             TextArea {
                 onTextChanged: {
-                    txt01.text = text
+                    txt_caption_checker01.text = text
                 }
             }
 
@@ -138,11 +138,11 @@ ApplicationWindow {
             var ok_count = 0
             var ng_count = 0
             var ret = false
-            txt01.text = " "
+            txt_caption_checker01.text = " "
             for(var i=0; i<cl01.captionCount; i++){
                 temp_caption = cl01.captions[i].caption
-                txt01.text = temp_caption
-                if(txt01.truncated){
+                txt_caption_checker01.text = temp_caption
+                if(txt_caption_checker01.truncated){
                     cl01.captions[i].result = "NG"
                     ng_count++
                 }
@@ -150,12 +150,12 @@ ApplicationWindow {
                     cl01.captions[i].result = "OK"
                     ok_count++
                 }
-                console.log("caption:"+temp_caption+"\t\t\ttxt01.truncated="+txt01.truncated)
+                console.log("caption:"+temp_caption+"\t\t\ttxt_caption_checker01.truncated="+txt_caption_checker01.truncated)
                 ta_log.append(cl01.captions[i].caption+"\t\t:"+cl01.captions[i].result)
-                txt01.text = " "
+                txt_caption_checker01.text = " "
             }
             ret = cl01.saveResult()
-            txt01.text = "finished"
+            txt_caption_checker01.text = "finished"
             ta_log.append("Caption clip check completed.")
             ta_log.append("NG(clipped):"+ng_count+"\t OK(not clipped):"+ok_count+"\t Total:"+cl01.captionCount)
             if(ret === true){
