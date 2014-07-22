@@ -56,5 +56,8 @@ Thanks to Debao Zhang.
 
 
 ## Revision history
-* Version 0.50(bata)
+* Version 0.50(beta)
  * Initial release.
+
+* Version 0.51(beta) under develop
+ * Highlight "NG" cell as red.
