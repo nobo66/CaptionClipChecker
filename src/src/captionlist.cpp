@@ -29,6 +29,7 @@
 ****************************************************************************/
 #include "captionlist.h"
 #include "xlsxdocument.h"
+#include "xlsxformat.h"
 
 #define END_OF_DATA_CHECK_COUNT 5
 #define MAX_CAPTIONS 32767
@@ -79,8 +80,17 @@ bool CaptionList::saveResult()
     QXlsx::Document xlsx(m_datafile);
     int tempRow = m_loadStartRow;
     bool bRet = false;
+    QString tempStr;
+    QXlsx::Format format;
+    format.setPatternBackgroundColor(Qt::red);
     for(int i=0; i<m_captions.count(); i++){
-        bRet = xlsx.write(tempRow,m_loadStartColumn+1,m_captions.at(i)->result());
+        tempStr = m_captions.at(i)->result();
+        if(QString("NG") == tempStr){
+            bRet = xlsx.write(tempRow,m_loadStartColumn+1,tempStr,format);
+        }
+        else{
+            bRet = xlsx.write(tempRow,m_loadStartColumn+1,tempStr);
+        }
         tempRow++;
     }
     bRet = xlsx.save();
